@@ -43,7 +43,6 @@ button,
   color: $color_white
   font-size: 1.125em
   text-align: center
-  //display: inline-block
   padding: 1em 2.75em
   cursor: pointer
 
@@ -62,6 +61,7 @@ button:hover,
     display: flex
     justify-content: space-between
     align-items: start
+    padding: 0 5px
 
 .for_img
   max-width: 377px
@@ -75,7 +75,13 @@ button:hover,
 
 .category_wrapper
   width: 30%
+  height: 90vh
   background-color: $color_light
+
+  ul
+    display: flex
+    flex-direction: column
+    gap: 5px
 
   li
     text-align: left
@@ -92,7 +98,7 @@ button:hover,
     display: grid
     border: 1px solid $color_border
     border-radius: 3px
-    padding: 5px
+    //padding: 5px
     margin-bottom: 10px
 
     h3
@@ -113,9 +119,13 @@ button:hover,
   width: 30%
   columns: 2 100px
 
+  .goods_item:hover
+    border: 1px solid $color_light
+    box-shadow: 0 2px 10px $color_dark
+
 .good_wrapper
   width: 30%
-  columns: 1 200px
+  //columns: 1 200px
 
   p:last-of-type
     font-size: 1.5em

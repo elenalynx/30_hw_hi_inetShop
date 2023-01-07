@@ -3,9 +3,9 @@ export class Category {
     name;
     arrayGoodsId;
 
-    constructor(id, name, [...args]) {
+    constructor(id, name, goodsId = []) {
         this.id = id;
         this.name = name;
-        this.arrayGoodsId = [args];
+        this.arrayGoodsId = goodsId;
     }
 }
