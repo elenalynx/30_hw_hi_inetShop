@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Roboto&display=swap");
+* {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+ul,
+li,
+link,
+a {
+  list-style: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 45px;
+  line-height: 55px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+button,
+.btn {
+  background-color: #CEB3CB;
+  border: 1px solid #B99BB6;
+  border-radius: 3px;
+  color: #ffffff;
+  font-size: 1.125em;
+  text-align: center;
+  padding: 1em 2.75em;
+  cursor: pointer;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #B08EAD;
+}
+
+.section-category {
+  background-color: #ffffff;
+  padding: 20px 0;
+}
+.section-category .container {
+  max-width: 1265px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.for_img {
+  max-width: 377px;
+  max-height: 377px;
+  overflow: hidden;
+}
+.for_img img {
+  width: 100%;
+  display: block;
+  padding-bottom: 9px;
+}
+
+.category_wrapper {
+  width: 30%;
+  background-color: #D6BBD3;
+}
+.category_wrapper li {
+  text-align: left;
+}
+.category_wrapper a {
+  color: #ffffff;
+}
+
+.goods_wrapper .goods_item,
+.good_wrapper .goods_item {
+  width: 100%;
+  break-inside: avoid;
+  text-align: center;
+  display: grid;
+  border: 1px solid #B99BB6;
+  border-radius: 3px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+.goods_wrapper .goods_item h3,
+.good_wrapper .goods_item h3 {
+  font-size: 18px;
+  padding-bottom: 7px;
+}
+.goods_wrapper .goods_item p,
+.good_wrapper .goods_item p {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.goods_wrapper .goods_item p:last-of-type,
+.good_wrapper .goods_item p:last-of-type {
+  color: #B0B0B0;
+}
+.goods_wrapper .goods_item a,
+.good_wrapper .goods_item a {
+  padding: 0.5em 1em;
+}
+
+.goods_wrapper {
+  width: 30%;
+  columns: 2 100px;
+}
+
+.good_wrapper {
+  width: 30%;
+  columns: 1 200px;
+}
+.good_wrapper p:last-of-type {
+  font-size: 1.5em;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Roboto&display=swap')
+@import "variables"
+
+*
+  font-family: $font_main
+  font-size: $font_size_main
+  font-style: $font_style
+  font-weight: $font_weight
+  line-height: $font_line_height_main
+  margin: 0
+  padding: 0
+
+html,
+body,
+ul,
+li,
+link,
+a
+
+  list-style: none
+  text-decoration: none
+  box-sizing: border-box
+
+
+//h1, h2, h3
+
+h1
+  font-size: $font_size_h1
+  line-height: $font_line_height_h1
+
+h2
+  font-size: $font_size_h2
+
+h3
+  font-size: $font_size_h3
+
+
+button,
+.btn
+  background-color: $color_btn
+  border: 1px solid $color_border
+  border-radius: 3px
+  color: $color_white
+  font-size: 1.125em
+  text-align: center
+  //display: inline-block
+  padding: 1em 2.75em
+  cursor: pointer
+
+button:hover,
+.btn:hover
+  background-color: $color_middle
+
+
+.section-category
+  background-color: $color_white
+  padding: 20px 0
+
+  .container
+    max-width: 1265px
+    margin: auto
+    display: flex
+    justify-content: space-between
+    align-items: start
+
+.for_img
+  max-width: 377px
+  max-height: 377px
+  overflow: hidden
+
+  img
+    width: 100%
+    display: block
+    padding-bottom: 9px
+
+.category_wrapper
+  width: 30%
+  background-color: $color_light
+
+  li
+    text-align: left
+
+  a
+    color: $color_white
+
+.goods_wrapper,
+.good_wrapper
+  .goods_item
+    width: 100%
+    break-inside: avoid
+    text-align: center
+    display: grid
+    border: 1px solid $color_border
+    border-radius: 3px
+    padding: 5px
+    margin-bottom: 10px
+
+    h3
+      font-size: 18px
+      padding-bottom: 7px
+
+    p
+      font-size: 14px
+      padding-bottom: 5px
+
+    p:last-of-type
+      color: $color_accent_text
+
+    a
+      padding: 0.5em 1em
+
+.goods_wrapper
+  width: 30%
+  columns: 2 100px
+
+.good_wrapper
+  width: 30%
+  columns: 1 200px
+
+  p:last-of-type
+    font-size: 1.5em
