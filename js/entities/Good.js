@@ -1,11 +1,15 @@
-class Good {
+export class Good {
     id;
-    name;
+    title;
     price;
+    imgSrc;
+    description;
 
-    constructor(id, name, price) {
+    constructor(id, title, price, imgSrc, description) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.price = price;
+        this.imgSrc = imgSrc;
+        this.description = description;
     }
 }

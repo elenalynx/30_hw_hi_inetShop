@@ -1,12 +1,14 @@
 export class GoodFull extends Good {
     id;
-    name;
+    title;
     price;
+    imgSrc;
 
     description;
 
-    constructor(id, name, price, description) {
-        super(id, name, price);
+    constructor(id, title, price, imgSrc, description) {
+        super(id, title, price, imgSrc);
+
         this.description = description;
     }
 }

@@ -1,6 +1,11 @@
 export class GoodShortInfo extends Good {
     id;
-    name;
+    title;
     price;
+    imgSrc;
+
+   // constructor(id, title, price) {
+   //     super(id, title, price);
+   // }
 
 }

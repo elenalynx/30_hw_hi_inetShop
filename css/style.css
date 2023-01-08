@@ -74,21 +74,18 @@ button:hover,
   padding-bottom: 9px;
 }
 
-.category_wrapper {
+.categories_div {
   width: 30%;
   height: 90vh;
   background-color: #D6BBD3;
 }
-.category_wrapper ul {
+.categories_div ul {
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.category_wrapper li {
+.categories_div li {
   text-align: left;
-}
-.category_wrapper a {
-  color: #ffffff;
 }
 
 .goods_wrapper .goods_item,
@@ -131,6 +128,10 @@ button:hover,
 
 .good_wrapper {
   width: 30%;
+  max-width: 377px;
+}
+.good_wrapper p:first-of-type {
+  padding: 0 3px;
 }
 .good_wrapper p:last-of-type {
   font-size: 1.5em;

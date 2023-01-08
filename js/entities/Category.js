@@ -1,11 +1,11 @@
 export class Category {
     id;
-    name;
+    title;
     arrayGoodsId;
 
-    constructor(id, name, goodsId = []) {
+    constructor(id, title, goodsId = []) {
         this.id = id;
-        this.name = name;
+        this.title = title;
         this.arrayGoodsId = goodsId;
     }
 }
