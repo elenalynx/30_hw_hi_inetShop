@@ -33,7 +33,7 @@ export class Shop {
         })
 
         this.goodWrapper.addEventListener('click', ( {target}) => {
-            if (target.matches('.btn')) {
+            if (target.matches('button')) {
                 this.clearGoodDetail();
                 this.clearGoods();
             }
@@ -83,7 +83,7 @@ export class Shop {
             </div>
             <h3>${title}</h3>
             <p>${price} UAH</p>
-            <a class="btn" href="">See more</a>`;
+            <button class="btn" type="button">See more</button>`;
 
             this.goodsWrapper.append(goodItem);
         });
@@ -106,7 +106,7 @@ export class Shop {
             <h3>${title}</h3>
             <p>${description}</p>
             <p>${price} UAH</p>
-            <a class="btn" href="">Buy</a>`;
+            <button class="btn" type="button">Buy</button>`;
 
         this.goodWrapper.append(goodItem);
 
