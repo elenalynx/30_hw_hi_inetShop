@@ -42,7 +42,7 @@ export class Shop {
 
     render() {
         this.renderCategories();
-        this.renderGoods(this.config.goods);
+        // this.renderGoods(this.config.goods);
     }
 
 
