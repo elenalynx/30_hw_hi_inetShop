@@ -14,6 +14,67 @@
 </head>
 <body>
 
+<section class="modal hide" data-set="close">
+    <div class="modal-wrapper">
+        <div class="modal-order-content">
+            <button type="button" class="modal-close" data-set="close">&#128473;</button>
+            <div class="order-form-wrapper">
+                <form action="" class="order-form">
+                    <h2>Enter your details to complete the order</h2>
+                    <label>
+                        First name
+                        <input type="text" name="firstName order-form" id="firstName">
+                    </label>
+                    <label>
+                        Last name
+                        <input type="text" name="lastName order-form" id="lastName">
+                    </label>
+                    <label>
+                        Your city
+                        <select name="city">
+                            <option selected>Dnipro</option>
+                            <option name="order-form">Kyiv</option>
+                            <option>Odesa</option>
+                            <option>Kharkiv</option>
+                        </select>
+                        <!--                        <input type="text" name="city" id="city" placeholder="search city">-->
+                    </label>
+                    <label>
+                        Warehouse "Nova Poshta"
+                        <input type="text" name="novaPoshta order-form" id="novaPoshta">
+                    </label>
+
+                    <div class="order-payment-type">
+                        <p class="header-paymentType">Payment type</p>
+                        <div>
+                            <input type="radio" name="paymentType" id="paymentType1" value="postpaid" checked>
+                            <label for="paymentType1">
+                                Postpaid
+                            </label>
+                        </div>
+                        <div>
+                            <input type="radio" name="paymentType" id="paymentType2" value="bankCard">
+                            <label for="paymentType2">
+                                Bank card
+                            </label>
+                        </div>
+                    </div>
+
+                    <label>
+                        Quantity of goods
+                        <input type="number" name="quantity" id="quantity" placeholder="1" min="1" value="1">
+                    </label>
+                    <label>
+                        Comments
+                        <textarea name="comments order-form" id="comments" cols="3" rows="3"></textarea>
+                    </label>
+                    <button class="btn modal-order-btn" type="submit">Go to cart</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section class="section-category">
     <div class="container">
         <div class="categories_div">

@@ -1,7 +1,11 @@
+import {Modal} from "./Modal.js";
+
 export class Shop {
     categoriesWrapper = document.querySelector('.categories_wrapper');
     goodsWrapper = document.querySelector('.goods_wrapper');
     goodWrapper = document.querySelector('.good_wrapper');
+    modal = new Modal(document.querySelector('.modal'));
+    orderForm = document.querySelector('.order-form');
 
     constructor(config) {
         this.config = config;
@@ -30,21 +34,57 @@ export class Shop {
 
                 this.renderGood(good);
             }
-        })
+        });
 
         this.goodWrapper.addEventListener('click', ( {target}) => {
             if (target.matches('button')) {
-                this.clearGoodDetail();
-                this.clearGoods();
+                // HW 30
+                // this.clearGoodDetail();
+                // this.clearGoods();
+
+                // HW 26
+                this.modal.show();
             }
-        })
+        });
+
+        this.orderForm.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const orderInfo = {
+                firstName: this.orderForm.elements.firstName.value,
+                lastName: this.orderForm.elements.lastName.value,
+                city: this.orderForm.elements.city.value,
+                novaPoshta: this.orderForm.elements.novaPoshta.value,
+                paymentType: this.orderForm.elements.paymentType.value,
+                quantity: this.orderForm.elements.quantity.value,
+            };
+
+            console.log(orderInfo);
+
+        });
+
+
+        // НЕ розумію як через ФормДату все отримати
+
+        // this.orderForm.onsubmit = async (event) => {
+        //     event.preventDefault();
+        //     let result = new FormData(this.orderForm);
+            // let response = await fetch('', {
+            //     method: 'POST',
+            //     body: new FormData(this.orderForm)
+            // });
+            //
+            // let result = await response.json();
+            // let res = result.getAll('order-form');
+            // console.log(result);
+            // console.log(res);
+        // }
     }
 
     render() {
         this.renderCategories();
         // this.renderGoods(this.config.goods);
     }
-
 
     renderCategories() {
         this.config.categories.forEach(({title, id}) => {
@@ -106,9 +146,8 @@ export class Shop {
             <h3>${title}</h3>
             <p>${description}</p>
             <p>${price} UAH</p>
-            <button class="btn" type="button">Buy</button>`;
+            <button class="btn modal-order-btn" type="button">Buy</button>`;
 
         this.goodWrapper.append(goodItem);
-
     }
 }

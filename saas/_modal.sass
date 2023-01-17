@@ -1,0 +1,58 @@
+@import "variables"
+
+.modal
+  background-color: $color_dark_transparent
+  padding: 20px 0
+  height: 100vh
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  transition: all 0.3s
+  opacity: 1
+
+  .modal-wrapper
+    max-width: 400px
+    margin: auto
+    background-color: $color_light
+    border-radius: 5px
+    border: 1px solid $color_border
+
+    .modal-order-content
+      padding: 20px 10px
+      position: relative
+
+    .modal-close
+      position: absolute
+      top: 0
+      right: -30px
+      padding: 2px
+
+.order-form
+  display: grid
+  //grid-template-columns: 1fr
+  gap: 10px
+
+  h2
+    text-align: center
+
+  label
+    display: flex
+    flex-direction: column
+    gap: 5px
+
+  .order-payment-type
+    div
+      display: flex
+      gap: 5px
+
+    //display: grid
+    //grid-template: 'header-paymentType header-paymentType header-paymentType' 100%
+
+input,
+textarea,
+select
+  border: 1px solid $color_border
+  border-radius: 5px
+  padding: 3px
