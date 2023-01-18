@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Roboto&display=swap");
-.modal {
+.modalOrderData {
   background-color: rgba(82, 67, 81, 0.7);
   padding: 20px 0;
   height: 100vh;
@@ -11,18 +11,18 @@
   transition: all 0.3s;
   opacity: 1;
 }
-.modal .modal-wrapper {
+.modalOrderData .modal-wrapper {
   max-width: 400px;
   margin: auto;
   background-color: #D6BBD3;
   border-radius: 5px;
   border: 1px solid #B99BB6;
 }
-.modal .modal-wrapper .modal-order-content {
+.modalOrderData .modal-wrapper .modal-order-content {
   padding: 20px 10px;
   position: relative;
 }
-.modal .modal-wrapper .modal-close {
+.modalOrderData .modal-wrapper .modal-close {
   position: absolute;
   top: 0;
   right: -30px;

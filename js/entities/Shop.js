@@ -1,11 +1,12 @@
 import {Modal} from "./Modal.js";
+import {Form} from "./Form.js";
 
 export class Shop {
     categoriesWrapper = document.querySelector('.categories_wrapper');
     goodsWrapper = document.querySelector('.goods_wrapper');
     goodWrapper = document.querySelector('.good_wrapper');
-    modal = new Modal(document.querySelector('.modal'));
-    orderForm = document.querySelector('.order-form');
+    modal = new Modal(document.querySelector('.modalOrderData'));
+    orderForm = new Form(document.querySelector('.order-form'), this.modal);
 
     constructor(config) {
         this.config = config;
@@ -44,21 +45,22 @@ export class Shop {
 
                 // HW 26
                 this.modal.show();
+                // this.orderForm.renderOrderForm();
             }
         });
 
-        this.orderForm.addEventListener('submit', (event) => {
+        this.orderForm.elem.addEventListener('submit', (event) => {
             event.preventDefault();
 
             const orderInfo = {
-                firstName: this.orderForm.elements.firstName.value,
-                lastName: this.orderForm.elements.lastName.value,
-                city: this.orderForm.elements.city.value,
-                novaPoshta: this.orderForm.elements.novaPoshta.value,
-                paymentType: this.orderForm.elements.paymentType.value,
-                quantity: this.orderForm.elements.quantity.value,
+                firstName: this.orderForm.elem.elements.firstName.value,
+                lastName: this.orderForm.elem.elements.lastName.value,
+                city: this.orderForm.elem.elements.city.value,
+                novaPoshta: this.orderForm.elem.elements.novaPoshta.value,
+                paymentType: this.orderForm.elem.elements.paymentType.value,
+                quantity: this.orderForm.elem.elements.quantity.value,
             };
-
+            this.orderForm.setInfo(orderInfo);
             console.log(orderInfo);
 
         });

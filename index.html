@@ -14,12 +14,13 @@
 </head>
 <body>
 
-<section class="modal hide" data-set="close">
+<section class="modalOrderData hide" data-set="close">
     <div class="modal-wrapper">
         <div class="modal-order-content">
             <button type="button" class="modal-close" data-set="close">&#128473;</button>
             <div class="order-form-wrapper">
-                <form action="" class="order-form">
+                <form action="/" method="GET" class="order-form">
+                    <div id="error"></div>
                     <h2>Enter your details to complete the order</h2>
                     <label>
                         First name
@@ -90,6 +91,6 @@
     </div>
 </section>
 
-<script src="js/main.js" type="module"></script>
+<script defer src="js/main.js" type="module"></script>
 </body>
 </html>
