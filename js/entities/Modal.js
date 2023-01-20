@@ -9,7 +9,9 @@ export class Modal {
 
     initHandlers() {
         this.element.addEventListener('click', ({target}) => {
+            console.log(1)
             if (target.dataset.action === 'close') {
+                console.log(2)
                 this.hide();
             }
         });

@@ -3,7 +3,7 @@ import {Modal} from "./Modal.js";
 export class Form {
     elem;
     modal;
-    data;
+    dataOrder;
 
     /**
      * @param elem
@@ -26,6 +26,6 @@ export class Form {
      * @param {Object} orderInfo
      */
     setInfo(orderInfo) {
-        this.data = orderInfo;
+        this.dataOrder = orderInfo;
     }
 }

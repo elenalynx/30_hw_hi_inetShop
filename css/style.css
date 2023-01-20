@@ -112,7 +112,7 @@ button:hover,
 
 .section-category {
   background-color: #ffffff;
-  padding: 20px 0;
+  padding: 20px 0 0 0;
 }
 .section-category .container {
   max-width: 1265px;
@@ -195,6 +195,11 @@ button:hover,
 }
 .good_wrapper p:last-of-type {
   font-size: 1.5em;
+}
+
+.section-cart {
+  background-color: #B08EAD;
+  padding: 20px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

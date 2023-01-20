@@ -1,5 +1,6 @@
 import {Modal} from "./Modal.js";
 import {Form} from "./Form.js";
+import {Cart} from "./Cart.js";
 
 export class Shop {
     categoriesWrapper = document.querySelector('.categories_wrapper');
@@ -7,6 +8,8 @@ export class Shop {
     goodWrapper = document.querySelector('.good_wrapper');
     modal = new Modal(document.querySelector('.modalOrderData'));
     orderForm = new Form(document.querySelector('.order-form'), this.modal);
+    cart = new Cart();
+    cartWrapper = document.querySelector('.cart_div');
 
     constructor(config) {
         this.config = config;
@@ -44,6 +47,9 @@ export class Shop {
                 // this.clearGoods();
 
                 // HW 26
+                const { id } = target.dataset;
+                console.log(id);
+                this.cart.addGoods(id, this.config);
                 this.modal.show();
                 // this.orderForm.renderOrderForm();
             }
@@ -60,9 +66,13 @@ export class Shop {
                 paymentType: this.orderForm.elem.elements.paymentType.value,
                 quantity: this.orderForm.elem.elements.quantity.value,
             };
+
             this.orderForm.setInfo(orderInfo);
             console.log(orderInfo);
-
+            this.modal.hide();
+            this.orderForm.elem.reset();
+            // openCart()
+            this.renderCart();
         });
 
 
@@ -148,8 +158,18 @@ export class Shop {
             <h3>${title}</h3>
             <p>${description}</p>
             <p>${price} UAH</p>
-            <button class="btn modal-order-btn" type="button">Buy</button>`;
+            <button data-id="${id}" class="btn modal-order-btn" type="button">Buy</button>`;
 
         this.goodWrapper.append(goodItem);
+    }
+
+    renderCart() {
+        let result = '';
+        const sum = Object.entries(this.cart.goodsCart).reduce((acc, [, {id, count}]) => {
+            const good = this.config.goods.find((item) => item.id === +id);
+            console.log(good.price)
+            return acc + (+good.price * count);
+        }, 0);
+        console.log(sum);
     }
 }
