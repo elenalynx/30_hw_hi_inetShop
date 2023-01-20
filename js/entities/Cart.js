@@ -1,5 +1,8 @@
 export class Cart {
     // config;
+    /**
+     * @type {[{count: number, id: number},{count: number, id: number},{count: number, id: number}]}
+     */
     goodsCart = [
         {
             id: 33,
@@ -14,10 +17,10 @@ export class Cart {
         },
     ];
 
-    constructor(config) {
+    constructor() {
         // this.config = config;
 
-        this.goods = {};
+        // this.goods = {};
     }
 
     initCart() {

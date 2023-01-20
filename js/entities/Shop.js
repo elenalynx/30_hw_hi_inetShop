@@ -165,11 +165,32 @@ export class Shop {
 
     renderCart() {
         let result = '';
-        const sum = Object.entries(this.cart.goodsCart).reduce((acc, [, {id, count}]) => {
-            const good = this.config.goods.find((item) => item.id === +id);
+        console.log(Object.values(this.cart.goodsCart))
+        const sum = Object.values(this.cart.goodsCart).reduce((acc, [index ,{id, count}]) => {
+            const good = this.config.goods.find((item) => {
+                console.log(item.id)
+                console.log([1].id)
+                console.log(id)
+                if (item.id === [1].id) {
+                console.log(item)
+                console.log(item.id)
+                console.log(item.title)
+                console.log(item.price)
+                }
+            });
+            console.log(good)
+            result = `
+            <p>${result}
+            ${good.title}   ${count}   ${good.price}</p>`;
             console.log(good.price)
             return acc + (+good.price * count);
         }, 0);
+        result = `
+        ${result}
+        Total: ${sum}`;
+
+        this.cartWrapper.innerText = result;
         console.log(sum);
+
     }
 }
