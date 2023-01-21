@@ -40,14 +40,14 @@ export class Shop {
             }
         });
 
-        this.goodWrapper.addEventListener('click', ( {target}) => {
+        this.goodWrapper.addEventListener('click', ({target}) => {
             if (target.matches('button')) {
                 // HW 30
                 // this.clearGoodDetail();
                 // this.clearGoods();
 
                 // HW 26
-                const { id } = target.dataset;
+                const {id} = target.dataset;
                 console.log(id);
                 this.cart.addGoods(id, this.config);
                 this.modal.show();
@@ -72,7 +72,7 @@ export class Shop {
             this.modal.hide();
             this.orderForm.elem.reset();
             // openCart()
-            this.renderCart();
+            this.renderCart(this.cart.goodsCart);
         });
 
 
@@ -81,15 +81,15 @@ export class Shop {
         // this.orderForm.onsubmit = async (event) => {
         //     event.preventDefault();
         //     let result = new FormData(this.orderForm);
-            // let response = await fetch('', {
-            //     method: 'POST',
-            //     body: new FormData(this.orderForm)
-            // });
-            //
-            // let result = await response.json();
-            // let res = result.getAll('order-form');
-            // console.log(result);
-            // console.log(res);
+        // let response = await fetch('', {
+        //     method: 'POST',
+        //     body: new FormData(this.orderForm)
+        // });
+        //
+        // let result = await response.json();
+        // let res = result.getAll('order-form');
+        // console.log(result);
+        // console.log(res);
         // }
     }
 
@@ -163,33 +163,49 @@ export class Shop {
         this.goodWrapper.append(goodItem);
     }
 
-    renderCart() {
+    /**
+     *
+     * @param {[]} goodsCartArr
+     */
+    renderCart(goodsCartArr) {
         let result = '';
-        console.log(Object.values(this.cart.goodsCart))
-        const sum = Object.values(this.cart.goodsCart).reduce((acc, [index ,{id, count}]) => {
+        console.log(Object.entries(goodsCartArr))
+        const sum = Object.entries(goodsCartArr).reduce((acc, [index, {id, count}]) => {
+            console.log(acc, index, id, count)
             const good = this.config.goods.find((item) => {
-                console.log(item.id)
-                console.log([1].id)
-                console.log(id)
-                if (item.id === [1].id) {
                 console.log(item)
-                console.log(item.id)
-                console.log(item.title)
-                console.log(item.price)
+
+                if (item.id === +id) {
+                    console.log(item)
+                    // console.log(item.id)
+                    // console.log(item.title)
+                    // console.log(item.price)
+                    return item;
                 }
             });
             console.log(good)
             result = `
-            <p>${result}
-            ${good.title}   ${count}   ${good.price}</p>`;
-            console.log(good.price)
+            ${result}
+            <tr>
+            <td>${good.title}</td>
+            <td>${count}</td>
+            <td>${good.price}</td>
+            </tr>
+            `;
+            // console.log(good.price)
+            // return acc++;
             return acc + (+good.price * count);
         }, 0);
+
         result = `
         ${result}
-        Total: ${sum}`;
+        <tr>
+        <th colspan="2">Total:</th>
+        <th>${sum}</th>
+        </tr>
+        `;
 
-        this.cartWrapper.innerText = result;
+        this.cartWrapper.innerHTML = result;
         console.log(sum);
 
     }

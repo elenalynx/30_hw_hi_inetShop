@@ -39,6 +39,14 @@ h3
   visibility: hidden
   opacity: 0
 
+.container
+  max-width: 1265px
+  margin: auto
+  display: flex
+  justify-content: space-between
+  align-items: start
+  padding: 0 5px
+
 button,
 .btn
   background-color: $color_btn
@@ -58,14 +66,6 @@ button:hover,
 .section-category
   background-color: $color_white
   padding: 20px 0 0 0
-
-  .container
-    max-width: 1265px
-    margin: auto
-    display: flex
-    justify-content: space-between
-    align-items: start
-    padding: 0 5px
 
 .for_img
   max-width: 377px
@@ -141,3 +141,28 @@ button:hover,
 .section-cart
   background-color: $color_middle
   padding: 20px 0
+
+  table
+    width: 50%
+    background-color: $color_white
+    border: 1px solid $color_border
+    margin: auto
+    //justify-content: space-between
+    //align-items: center
+
+    tbody
+      background-color: $color_light
+      //margin: 2px
+      tr,
+      td,
+      th
+        padding: 2px 5px
+        border-bottom: 1px solid $color_border
+        text-align: left
+
+      th
+        font-weight: bold
+
+
+
+

@@ -1,20 +1,20 @@
 export class Cart {
     // config;
     /**
-     * @type {[{count: number, id: number},{count: number, id: number},{count: number, id: number}]}
+     * @type {[]}
      */
     goodsCart = [
-        {
-            id: 33,
-            count: 1,
-        },
-        {
-            id: 1,
-            count: 1,
-        },{
-            id: 3,
-            count: 1,
-        },
+        // {
+        //     id: 4,
+        //     count: 1,
+        // },
+        // {
+        //     id: 1,
+        //     count: 1,
+        // },{
+        //     id: 3,
+        //     count: 1,
+        // },
     ];
 
     constructor() {
